@@ -138,13 +138,13 @@ NULL
 
 #' @importFrom stats hclust dist
 #' @importFrom scater librarySizeFactors normalizeCounts
-#' @importFrom igraph cluster_walktrap
+#' @importFrom igraph cluster_walktrap cluster_louvain
 #' @importFrom BiocParallel SerialParam bpmapply
 #' @importFrom Matrix t
 #' @importFrom BiocSingular bsparam bsdeferred
 #' @importClassesFrom Matrix dgCMatrix
 .quick_cluster <- function(x, min.size=100, method=c("igraph", "hclust"), use.ranks=FALSE,
-    d=NULL, subset.row=NULL, min.mean=NULL, graph.fun=cluster_walktrap,
+    d=NULL, subset.row=NULL, min.mean=NULL, graph.fun=cluster_louvain,
     BSPARAM=bsparam(), BPPARAM=SerialParam(), block=NULL, block.BPPARAM=SerialParam(), 
     ...)
 {
